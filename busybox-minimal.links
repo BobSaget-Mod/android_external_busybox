@@ -118,6 +118,7 @@
 /bin/setsid
 /bin/sh
 /bin/sha1sum
+/bin/sha3sum
 /bin/sha256sum
 /bin/sha512sum
 /bin/sleep

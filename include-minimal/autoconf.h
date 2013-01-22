@@ -928,6 +928,10 @@
 #define ENABLE_SHA1SUM 1
 #define IF_SHA1SUM(...) __VA_ARGS__
 #define IF_NOT_SHA1SUM(...)
+#define CONFIG_SHA3SUM 1
+#define ENABLE_SHA3SUM 1
+#define IF_SHA3SUM(...) __VA_ARGS__
+#define IF_NOT_SHA3SUM(...)
 #define CONFIG_SHA256SUM 1
 #define ENABLE_SHA256SUM 1
 #define IF_SHA256SUM(...) __VA_ARGS__
