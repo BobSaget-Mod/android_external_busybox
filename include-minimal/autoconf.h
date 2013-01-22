@@ -932,6 +932,10 @@
 #define ENABLE_SHA3SUM 1
 #define IF_SHA3SUM(...) __VA_ARGS__
 #define IF_NOT_SHA3SUM(...)
+#define CONFIG_SHA3_SMALL 0
+#define ENABLE_SHA3_SMALL 1
+#define IF_SHA3_SMALL(...) __VA_ARGS__
+#define IF_NOT_SHA3_SMALL(...)
 #define CONFIG_SHA256SUM 1
 #define ENABLE_SHA256SUM 1
 #define IF_SHA256SUM(...) __VA_ARGS__

@@ -244,6 +244,7 @@ CONFIG_FALSE=y
 # CONFIG_SEQ is not set
 # CONFIG_SHA1SUM is not set
 # CONFIG_SHA3SUM is not set
+# CONFIG_SHA3_SMALL is not set
 # CONFIG_SHA256SUM is not set
 # CONFIG_SHA512SUM is not set
 # CONFIG_SLEEP is not set
