@@ -428,7 +428,7 @@ static void sendping_tail(void (*sp)(int), int size_pkt)
 	 * it doesn't matter */
 	sz = xsendto(pingsock, G.snd_packet, size_pkt, &pingaddr.sa, sizeof(pingaddr));
 	if (sz != size_pkt)
-		bb_error_msg_and_die("%s", bb_msg_write_error);
+		bb_error_msg_and_die(bb_msg_write_error);
 
 	if (pingcount == 0 || deadline || G.ntransmitted < pingcount) {
 		/* Didn't send all pings yet - schedule next in 1s */
@@ -553,7 +553,7 @@ static void unpack_tail(int sz, uint32_t *tp,
 		uint16_t recv_seq, int ttl)
 {
 	const char *dupmsg = " (DUP!)";
-	unsigned triptime = 0;
+	unsigned triptime = triptime; /* for gcc */
 
 	++G.nreceived;
 
@@ -593,7 +593,7 @@ static void unpack4(char *buf, int sz, struct sockaddr_in *from)
 	int hlen;
 
 	/* discard if too short */
-	if (sz < (int) (datalen + ICMP_MINLEN))
+	if (sz < (datalen + ICMP_MINLEN))
 		return;
 
 	/* check IP header */
@@ -608,7 +608,7 @@ static void unpack4(char *buf, int sz, struct sockaddr_in *from)
 		uint16_t recv_seq = ntohs(icmppkt->icmp_seq);
 		uint32_t *tp = NULL;
 
-		if (sz >= (int) (ICMP_MINLEN + sizeof(uint32_t)))
+		if (sz >= ICMP_MINLEN + sizeof(uint32_t))
 			tp = (uint32_t *) icmppkt->icmp_data;
 		unpack_tail(sz, tp,
 			inet_ntoa(*(struct in_addr *) &from->sin_addr.s_addr),
