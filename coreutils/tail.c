@@ -24,6 +24,8 @@
  * 7) lseek attempted when count==0 even if arg was +0 (from top)
  */
 
+//kbuild:lib-$(CONFIG_TAIL) += tail.o
+
 //usage:#define tail_trivial_usage
 //usage:       "[OPTIONS] [FILE]..."
 //usage:#define tail_full_usage "\n\n"
